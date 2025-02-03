@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Allenamento</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <h1>Traccia i Tuoi Allenamenti</h1>
+    <form id="form">
+      <label for="giorno">Seleziona Giorno:</label>
+      <select id="giorno">
+        <option value="1">Giorno 1 - Upper Body</option>
+        <option value="2">Giorno 2 - Lower Body</option>
+        <option value="3">Giorno 3 - Total Body</option>
+      </select>
+      <label for="esercizio">Esercizio:</label>
+      <select id="esercizio" required>
+        <!-- Gli esercizi verranno caricati qui -->
+      </select>
+      <label for="data">Data:</label>
+      <input type="date" id="data" required>
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso" required>
+      <label for="serie">Serie:</label>
+      <input type="number" id="serie" min="1" required>
+      <label for="kg">Carico (kg):</label>
+      <input type="number" id="kg" required>
+      <button type="submit">Salva Allenamento</button>
+    </form>
+    <div id="log">
+      <h2>Allenamenti Tracciati:</h2>
+      <ul id="lista-allenamenti"></ul>
+    </div>
+    <div id="grafico-progressi">
+      <h2>Progressi Carico</h2>
+      <canvas id="graficoCarico" width="400" height="200"></canvas>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
